@@ -159,7 +159,6 @@
   "bugs": {
     "url": "https://github.com/TSHEPO-CLOUD/capstone-my-spaceship/issues"
   },
-
   "homepage": "https://github.com/TSHEPO-CLOUD/capstone-my-spaceship#readme",
   "main": "webpack.config.js"
 }
