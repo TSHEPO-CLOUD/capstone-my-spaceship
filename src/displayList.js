@@ -1,26 +1,7 @@
+/* eslint-disable max-classes-per-file, consistent-return */
 import axios from 'axios';
 
-const url = 'https://pokeapi.co/api/v2/pokemon/?limit=6&offset=6';
-const getPoke = async () => {
-  try {
-    const response = await axios.get(url);
-    console.log(response.data.results);
-    loadPokemons(response.data.results);
-  } catch (error) {
-    return error;
-  }
-}; const loadPokemons = (pokes) => {
-  pokes.forEach((poke) => {
-    singlePoke(poke.url);
-    console.log(poke.url);
-  });
-}; const singlePoke = async (pokeurl) => {
-  const res = await axios.get(pokeurl);
-  console.log(res);
-  const { name } = res.data;
-  const image = res.data.sprites.front_default;
-  createElements(name, image);
-}; const createElements = async (name, image) => {
+const createElements = async (name, image) => {
   const ul = document.getElementById('cards');
   const li = document.createElement('li');
   const div = document.createElement('div');
@@ -41,6 +22,32 @@ const getPoke = async () => {
   li.appendChild(div);
   li.appendChild(commentBtn);
   ul.appendChild(li);
+};
+
+const singlePoke = async (pokeurl) => {
+  const res = await axios.get(pokeurl);
+  console.log(res);
+  const { name } = res.data;
+  const image = res.data.sprites.front_default;
+  createElements(name, image);
+};
+
+const loadPokemons = (pokes) => {
+  pokes.forEach((poke) => {
+    singlePoke(poke.url);
+    console.log(poke.url);
+  });
+};
+
+const url = 'https://pokeapi.co/api/v2/pokemon/?limit=6&offset=6';
+const getPoke = async () => {
+  try {
+    const response = await axios.get(url);
+    console.log(response.data.results);
+    loadPokemons(response.data.results);
+  } catch (error) {
+    return error;
+  }
 };
 
 getPoke();
