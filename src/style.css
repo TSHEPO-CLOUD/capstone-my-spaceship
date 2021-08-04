@@ -27,3 +27,13 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+footer { width: 100%; 
+position: fixed; 
+bottom: 1rem; 
+border: 1px solid #000; 
+} 
+
+.text-footer { 
+padding: 2rem 1rem; 
+} 
