@@ -1,39 +1,40 @@
-let url = "https://pokeapi.co/api/v2/pokemon/?limit=6&offset=6";
-let apiKey = "FPwS7kLi1stB3QIQqLTK";
+import axios from 'axios';
+
+const url = 'https://pokeapi.co/api/v2/pokemon/?limit=6&offset=6';
 const getPoke = async () => {
   try {
-    let response = await axios.get(url);
+    const response = await axios.get(url);
     console.log(response.data.results);
     loadPokemons(response.data.results);
   } catch (error) {
     return error;
   }
-};const loadPokemons = (pokes) => {
+}; const loadPokemons = (pokes) => {
   pokes.forEach((poke) => {
     singlePoke(poke.url);
     console.log(poke.url);
   });
-};const singlePoke = async (pokeurl) => {
-  let res = await axios.get(pokeurl);
+}; const singlePoke = async (pokeurl) => {
+  const res = await axios.get(pokeurl);
   console.log(res);
-  let name = res.data.name;
-  let image = res.data.sprites.front_default;
+  const { name } = res.data;
+  const image = res.data.sprites.front_default;
   createElements(name, image);
-};const createElements = async (name, image) => {
-  let ul = document.getElementById("cards");
-  let li = document.createElement("li");
-  let div = document.createElement("div");
-  let likeIcon = document.createElement("i");
-  likeIcon.classList.add("far", "fa-heart");
-  li.classList.add("list");
-  let pokeName = document.createElement("p");
+}; const createElements = async (name, image) => {
+  const ul = document.getElementById('cards');
+  const li = document.createElement('li');
+  const div = document.createElement('div');
+  const likeIcon = document.createElement('i');
+  likeIcon.classList.add('far', 'fa-heart');
+  li.classList.add('list');
+  const pokeName = document.createElement('p');
   pokeName.textContent = name;
-  let pokeImg = document.createElement("img");
-  pokeImg.classList.add("image");
+  const pokeImg = document.createElement('img');
+  pokeImg.classList.add('image');
   pokeImg.src = image;
-  let commentBtn = document.createElement("button");
-  commentBtn.textContent = "Comments";
-	
+  const commentBtn = document.createElement('button');
+  commentBtn.textContent = 'Comments';
+
   li.appendChild(pokeImg);
   div.appendChild(pokeName);
   div.appendChild(likeIcon);
@@ -41,3 +42,5 @@ const getPoke = async () => {
   li.appendChild(commentBtn);
   ul.appendChild(li);
 };
+
+getPoke();
