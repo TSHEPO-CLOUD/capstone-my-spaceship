@@ -143,3 +143,12 @@ img {
   padding: 2rem;
   overflow: scroll;
 }
+
+.popup-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.popup-height {
+  margin-top: 0.5rem;
+}
