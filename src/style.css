@@ -67,6 +67,7 @@ header p {
 }
 
 .fa-heart {
+  cursor: pointer;
   color: red;
 }
 
@@ -101,6 +102,7 @@ header p {
   height: 80px;
   border: 6px solid black;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 footer {
@@ -181,5 +183,6 @@ img {
 }
 
 .popup-cemment-btn {
+  cursor: pointer;
   padding: 0.5rem;
 }
