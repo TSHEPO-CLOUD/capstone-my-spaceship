@@ -28,7 +28,7 @@
 
 ## Live Demo
 
-[Live link](https://tshepo-cloud.github.io/capstone-my-spaceship/).
+[Live link](https://tshepo-cloud.github.io/capstone-my-spaceship/)
 
 ## Getting Started
 
