@@ -38,3 +38,9 @@ footer {
 .text-footer {
   padding: 2rem 1rem;
 }
+
+.card-style {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+}
