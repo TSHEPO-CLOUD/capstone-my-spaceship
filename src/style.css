@@ -132,3 +132,14 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+.popup-div {
+  height: 500px;
+  background-color: yellow;
+  border: 5px solid blue;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+  overflow: scroll;
+}
