@@ -119,7 +119,10 @@ img {
 }
 
 .fa-times {
-  margin-left: 3rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 26px;
 }
 
 .bg-div {
@@ -136,8 +139,8 @@ img {
 
 .popup-div {
   height: 500px;
-  background-color: yellow;
-  border: 5px solid blue;
+  background-color: blanchedalmond;
+  border: 5px solid black;
   border-radius: 20px;
   text-align: center;
   position: relative;
