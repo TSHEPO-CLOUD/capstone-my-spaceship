@@ -7,6 +7,8 @@ const likeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstone
 const createElements = async (name, image, pokeurl) => {
   const ul = document.getElementById('cards');
   const li = document.createElement('li');
+  const div = document.createElement('div');
+  div.classList.add('div');
   const like = document.createElement('i');
   const likeCounter = document.createElement('p');
   const commentBtn = document.createElement('button');
@@ -14,7 +16,9 @@ const createElements = async (name, image, pokeurl) => {
     displayPopup(pokeurl);
   });
   commentBtn.textContent = 'Comments';
+  commentBtn.classList.add('comment-btn');
   likeCounter.textContent = await getLikes(name, likeUrl);
+  likeCounter.classList.add('likes');
   likeCounter.id = name;
 
   like.classList.add('far', 'fa-heart');
@@ -29,8 +33,9 @@ const createElements = async (name, image, pokeurl) => {
   pokeImg.classList.add('image');
   pokeImg.src = image;
   li.appendChild(pokeImg);
-  li.appendChild(pokeName);
-  li.appendChild(like);
+  div.appendChild(pokeName);
+  div.appendChild(like);
+  li.appendChild(div);
   li.appendChild(likeCounter);
   li.appendChild(commentBtn);
   ul.appendChild(li);
