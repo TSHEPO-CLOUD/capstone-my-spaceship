@@ -7,6 +7,8 @@ export const apiKey = 'FPwS7kLi1stB3QIQqLTK';
 const commentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${apiKey}/comments`;
 
 const displayPopup = async (pokeurl) => {
+  const bgDiv = document.createElement('div');
+  bgDiv.classList.add('bg-div');
   const res = await axios.get(pokeurl);
   const image = res.data.sprites.front_default;
   const { name } = res.data;
@@ -16,25 +18,29 @@ const displayPopup = async (pokeurl) => {
 
   const body = document.getElementById('body');
   const popupDiv = document.createElement('div');
+  popupDiv.classList.add('popup-div');
 
   const div = document.createElement('div');
   const closeIcon = document.createElement('i');
   closeIcon.classList.add('fas', 'fa-times');
   const pokeImg = document.createElement('img');
-  pokeImg.classList.add('image');
+  pokeImg.classList.add('popup-image');
   pokeImg.src = image;
   closeIcon.addEventListener('click', () => {
-    body.removeChild(popupDiv);
+    body.removeChild(bgDiv);
   });
 
   const pokeName = document.createElement('p');
+  pokeName.classList.add('popup-name');
   pokeName.textContent = name;
   const measureH = document.createElement('p');
+  measureH.classList.add('popup-height');
   const measureW = document.createElement('p');
   const pokeType = document.createElement('p');
   measureH.innerHTML = `Height: ${height}`;
   measureW.innerHTML = `Weight: ${weight}`;
   pokeType.innerHTML = `Type: ${type}`;
+  pokeType.classList.add('popup-type');
   div.appendChild(pokeImg);
   div.appendChild(closeIcon);
   popupDiv.appendChild(div);
@@ -44,7 +50,8 @@ const displayPopup = async (pokeurl) => {
   popupDiv.appendChild(pokeType);
   popupDiv.appendChild(await commentSection(name, commentUrl));
   popupDiv.appendChild(await addComment(name, commentUrl));
-  body.appendChild(popupDiv);
+  bgDiv.appendChild(popupDiv);
+  body.appendChild(bgDiv);
 };
 
 export default displayPopup;

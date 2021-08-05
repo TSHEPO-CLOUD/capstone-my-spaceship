@@ -23,6 +23,7 @@ body {
   background-image: url(../assets/bg-pokemon.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 header {
@@ -61,7 +62,7 @@ header p {
   background-image: linear-gradient(red 45%, black 50%, white 45%);
   border: 4px solid #000;
   border-radius: 50%;
-  box-shadow: 1rem 2rem 3rem grey;
+  box-shadow: 1.5rem 1.5rem 3rem black;
   position: relative;
 }
 
@@ -119,4 +120,63 @@ img {
 
 .fa-times {
   margin-left: 3rem;
+}
+
+.bg-div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-div {
+  height: 500px;
+  background-color: yellow;
+  border: 5px solid blue;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+  overflow: scroll;
+}
+
+.popup-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.popup-height {
+  margin-top: 0.5rem;
+}
+
+.popup-type {
+  margin-bottom: 0.5rem;
+}
+
+.popup-container {
+  margin-top: 0.5rem;
+}
+
+.popup-comment {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 0.7rem;
+}
+
+.name-input,
+.comment-input {
+  padding: 0.3rem;
+}
+
+.popup-cemment-btn {
+  padding: 0.5rem;
 }
