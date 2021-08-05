@@ -23,7 +23,10 @@ body {
   background-image: url(../assets/bg-pokemon.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
+
+
 
 header {
   width: 60%;
@@ -61,7 +64,7 @@ header p {
   background-image: linear-gradient(red 45%, black 50%, white 45%);
   border: 4px solid #000;
   border-radius: 50%;
-  box-shadow: 1rem 2rem 3rem grey;
+  box-shadow: 1.5rem 1.5rem 3rem black;
   position: relative;
 }
 
