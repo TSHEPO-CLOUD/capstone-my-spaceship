@@ -18,25 +18,29 @@ const displayPopup = async (pokeurl) => {
 
   const body = document.getElementById("body");
   const popupDiv = document.createElement("div");
+  popupDiv.classList.add("popup-div");
 
   const div = document.createElement("div");
   const closeIcon = document.createElement("i");
   closeIcon.classList.add("fas", "fa-times");
   const pokeImg = document.createElement("img");
-  pokeImg.classList.add("image");
+  pokeImg.classList.add("popup-image");
   pokeImg.src = image;
   closeIcon.addEventListener("click", () => {
     body.removeChild(bgDiv);
   });
 
   const pokeName = document.createElement("p");
+  pokeName.classList.add("popup-name");
   pokeName.textContent = name;
   const measureH = document.createElement("p");
+  measureH.classList.add("popup-height");
   const measureW = document.createElement("p");
   const pokeType = document.createElement("p");
   measureH.innerHTML = `Height: ${height}`;
   measureW.innerHTML = `Weight: ${weight}`;
   pokeType.innerHTML = `Type: ${type}`;
+  pokeType.classList.add("popup-type");
   div.appendChild(pokeImg);
   div.appendChild(closeIcon);
   popupDiv.appendChild(div);
