@@ -26,6 +26,10 @@
 
 [Video Link](https://www.loom.com/share/edadb4d507fd4e9a9b2fa1aa3104731e)
 
+## Live Demo
+
+[Live link](https://tshepo-cloud.github.io/capstone-my-spaceship/).
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
