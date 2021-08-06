@@ -22,10 +22,6 @@
 - CSS
 - Webpack
 
-## Video Demo
-
-[Video Link](https://www.loom.com/share/edadb4d507fd4e9a9b2fa1aa3104731e)
-
 ## Live Demo
 
 [Live link](https://tshepo-cloud.github.io/capstone-my-spaceship/)
